@@ -1,0 +1,14 @@
+<table>
+    <thead>
+        <th>Item</th>
+        <th>Cost</th>
+    </thead>
+    <tbody>
+        @for (item of items; track item.id) {
+        <tr>
+            <td>{{ item.description }}</td>
+            <td>{{ item.currentPrice }}</td>
+        </tr>
+        }
+    </tbody>
+</table>
