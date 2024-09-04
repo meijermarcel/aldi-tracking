@@ -17,9 +17,18 @@ import { MatIconModule } from '@angular/material/icon';
 import { NgChartsModule } from 'ng2-charts';
 import { ItemModalComponent } from './pages/dashboard/components/item-modal/item-modal.component';
 import { ItemChartComponent } from './pages/dashboard/components/item-chart/item-chart.component';
+import { LoadingComponent } from './pages/dashboard/components/loading/loading.component';
 
 @NgModule({
-    declarations: [AppComponent, DashboardComponent, ItemsOnSaleComponent, ItemInfoComponent, ItemModalComponent, ItemChartComponent],
+    declarations: [
+        AppComponent,
+        DashboardComponent,
+        ItemsOnSaleComponent,
+        ItemInfoComponent,
+        ItemModalComponent,
+        ItemChartComponent,
+        LoadingComponent
+    ],
     imports: [BrowserModule, AppRoutingModule, MatPaginatorModule, MatIconModule, NgChartsModule],
     providers: [
         provideHttpClient(),

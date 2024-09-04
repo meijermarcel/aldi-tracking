@@ -1,5 +1,6 @@
 export interface DashboardState {
     items: Item[];
+    isLoading: boolean;
 }
 
 export interface Item {

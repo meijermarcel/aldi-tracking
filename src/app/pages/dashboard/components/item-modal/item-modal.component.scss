@@ -1,13 +1,10 @@
 .modal-container {
-    z-index: 1000;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100vh;
-    --animate-duration: 300ms;
     background-color: rgba(0, 0, 0, 0.15);
-    --gray-accent: #c4c4c4;
 }
 
 .modal-content {
@@ -24,13 +21,6 @@
     flex-direction: column;
     justify-content: space-between;
     gap: 2rem;
-
-    .header {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-    }
 }
 
 .close-btn {

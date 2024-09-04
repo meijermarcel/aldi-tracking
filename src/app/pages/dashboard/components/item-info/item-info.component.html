@@ -1,7 +1,7 @@
 @if (item) {
 <div class="item-info-container" [ngClass]="stacked ? 'stacked' : ''">
     <div class="item-info-img">
-        <img [src]="getImageLink(200)" />
+        <img [src]="getImageLink(200)" loading="lazy" />
     </div>
     <div class="item-info-overview">
         <div class="item-info-description">{{ item.description }}</div>
