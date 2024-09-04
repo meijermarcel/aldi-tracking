@@ -14,10 +14,12 @@ import { ItemsOnSaleComponent } from './pages/dashboard/components/items-on-sale
 import { ItemInfoComponent } from './pages/dashboard/components/item-info/item-info.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatIconModule } from '@angular/material/icon';
+import { NgChartsModule } from 'ng2-charts';
+import { ItemModalComponent } from './pages/dashboard/components/item-modal/item-modal.component';
 
 @NgModule({
-    declarations: [AppComponent, DashboardComponent, ItemsOnSaleComponent, ItemInfoComponent],
-    imports: [BrowserModule, AppRoutingModule, MatPaginatorModule, MatIconModule],
+    declarations: [AppComponent, DashboardComponent, ItemsOnSaleComponent, ItemInfoComponent, ItemModalComponent],
+    imports: [BrowserModule, AppRoutingModule, MatPaginatorModule, MatIconModule, NgChartsModule],
     providers: [
         provideHttpClient(),
         provideStore({

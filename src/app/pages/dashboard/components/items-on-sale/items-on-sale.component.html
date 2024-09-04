@@ -7,16 +7,15 @@
         <thead>
             <th></th>
             <th>Cost</th>
-            <th>Avg Cost</th>
-            <th>Difference</th>
         </thead>
         <tbody>
             @for (item of itemsForPage; track item.id) {
-            <tr>
+            <tr (click)="itemSelected.emit(item)">
                 <td><item-info [item]="item" /></td>
-                <td>${{ item.currentPrice | number : '1.2-2' }}</td>
-                <td>${{ item.averagePrice | number : '1.2-2' }}</td>
-                <td>{{ item.currentDiffFromAvgPrice | number : '1.2-2' }}</td>
+                <td>
+                    ${{ item.currentPrice | number : '1.2-2' }}
+                    <span class="item-price-difference">({{ item.currentDiffFromAvgPrice | number : '1.2-2' }})</span>
+                </td>
             </tr>
             }
         </tbody>

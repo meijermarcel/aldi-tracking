@@ -1,3 +1,5 @@
 @if(items$ | async; as items) {
-<items-on-sale [items]="items" />
+<items-on-sale [items]="items" (itemSelected)="selectItem($event)" />
+} @if (selectedItem) {
+<item-modal [item]="selectedItem" (close)="selectedItem = null" />
 }

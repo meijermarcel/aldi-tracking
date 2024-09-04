@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Input, Output } from '@angular/core';
 import { Item } from '../../../../store/state';
 import { PageEvent } from '@angular/material/paginator';
 
@@ -10,6 +10,7 @@ import { PageEvent } from '@angular/material/paginator';
 })
 export class ItemsOnSaleComponent {
     @Input() items: Item[] = [];
+    @Output() itemSelected = new EventEmitter<Item>();
 
     itemsFiltered: Item[] = [];
     itemsForPage: Item[] = [];
