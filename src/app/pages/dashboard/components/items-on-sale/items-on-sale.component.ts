@@ -9,7 +9,7 @@ import { PageEvent } from '@angular/material/paginator';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ItemsOnSaleComponent {
-    @Input() items: Item[] = [];
+    @Input() items: Item[];
     @Output() itemSelected = new EventEmitter<Item>();
 
     itemsFiltered: Item[] = [];
@@ -34,7 +34,6 @@ export class ItemsOnSaleComponent {
         this.itemsFiltered.sort((a, b) => {
             return a.currentDiffFromAvgPrice! - b.currentDiffFromAvgPrice!;
         });
-        console.log(this.itemsFiltered);
         this.itemsForPage = this.itemsFiltered.slice(0, this.pageSize);
 
         this.cd.markForCheck();

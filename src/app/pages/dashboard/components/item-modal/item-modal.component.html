@@ -1,10 +1,9 @@
 @if (item) {
 <div class="modal-container">
     <div class="modal-content">
-        <div>
-            <button (click)="close.emit()">Close</button>
-        </div>
-        <item-info [item]="item" />
+        <button class="close-btn" (click)="close.emit()">Close</button>
+        <item-info [item]="item" [stacked]="true" />
+        <item-chart [item]="item" />
     </div>
 </div>
 }

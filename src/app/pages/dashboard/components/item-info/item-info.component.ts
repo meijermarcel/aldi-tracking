@@ -8,6 +8,7 @@ import { Item } from '../../../../store/state';
 })
 export class ItemInfoComponent {
     @Input() item: Item | undefined;
+    @Input() stacked = false;
 
     getImageLink(width: number) {
         if (!this.item) {

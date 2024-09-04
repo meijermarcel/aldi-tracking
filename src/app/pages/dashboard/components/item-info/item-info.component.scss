@@ -5,6 +5,10 @@
     gap: 1rem;
 }
 
+.item-info-container.stacked {
+    flex-direction: column;
+}
+
 .item-info-overview {
     display: flex;
     flex-direction: column;
