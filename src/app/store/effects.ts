@@ -15,17 +15,39 @@ export const loadItemsEffect = createEffect(
                 return dashboardService.getItems().pipe(
                     map((items: ItemResponse[]) => {
                         const mappedItems: Item[] = items.map((item) => {
-                            // sort storeItemPrices by dateTime
+                            // sort storeItemPrices by dateTime ascending
                             item.storeItemPrices.sort((a, b) => {
-                                return new Date(b.dateTime).getTime() - new Date(a.dateTime).getTime();
+                                return new Date(a.dateTime).getTime() - new Date(b.dateTime).getTime();
                             });
+
+                            // current price is last price in sorted array
+                            const currentPrice =
+                                item.storeItemPrices.length > 0
+                                    ? item.storeItemPrices[item.storeItemPrices.length - 1].price
+                                    : null;
+
+                            // calculate average price
+                            const averagePrice =
+                                item.storeItemPrices.length > 0
+                                    ? item.storeItemPrices.reduce((acc, price) => acc + price.price, 0) /
+                                      item.storeItemPrices.length
+                                    : null;
+
+                            // calculate difference from average price
+                            let currentDiffFromAvgPrice = null;
+                            if (currentPrice !== null && averagePrice !== null) {
+                                currentDiffFromAvgPrice = currentPrice - averagePrice;
+                            }
+
                             return {
                                 id: item.id,
                                 description: item.description,
                                 units: item.units,
                                 amount: item.amount,
                                 imageLink: item.imageLink,
-                                currentPrice: item.storeItemPrices.length > 0 ? item.storeItemPrices[0].price : null,
+                                currentPrice,
+                                averagePrice,
+                                currentDiffFromAvgPrice,
                                 storeItemPrices: item.storeItemPrices.map((price) => {
                                     return {
                                         id: price.id,

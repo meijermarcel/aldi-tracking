@@ -9,6 +9,8 @@ export interface Item {
     imageLink: string;
     units: string;
     currentPrice: number | null;
+    averagePrice: number | null;
+    currentDiffFromAvgPrice: number | null;
     storeItemPrices: ItemPrice[];
 }
 

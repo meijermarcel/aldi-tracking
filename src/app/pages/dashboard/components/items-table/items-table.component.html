@@ -2,12 +2,14 @@
     <thead>
         <th>Item</th>
         <th>Cost</th>
+        <th>Average Cost</th>
     </thead>
     <tbody>
         @for (item of items; track item.id) {
         <tr>
             <td>{{ item.description }}</td>
-            <td>{{ item.currentPrice }}</td>
+            <td>{{ item.currentPrice | number : '1.2-2' }}</td>
+            <td>{{ item.averagePrice | number : '1.2-2' }}</td>
         </tr>
         }
     </tbody>
