@@ -1,0 +1,34 @@
+.item-info-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+
+.item-info-overview {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+}
+
+.item-info-description {
+    font-weight: 500;
+}
+
+.item-info-amount {
+    color: gray;
+}
+
+.item-info-img {
+    height: 40px;
+    border-radius: 50%;
+    background-color: white;
+    overflow: hidden;
+    padding: 10px;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}

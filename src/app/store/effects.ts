@@ -29,8 +29,7 @@ export const loadItemsEffect = createEffect(
                             // calculate average price
                             const averagePrice =
                                 item.storeItemPrices.length > 0
-                                    ? item.storeItemPrices.reduce((acc, price) => acc + price.price, 0) /
-                                      item.storeItemPrices.length
+                                    ? getAverage(item.storeItemPrices.map((price) => price.price))
                                     : null;
 
                             // calculate difference from average price
@@ -67,3 +66,11 @@ export const loadItemsEffect = createEffect(
     },
     { functional: true }
 );
+
+function getAverage(arr: number[]): number {
+    return twoDecimals(arr.reduce((acc, val) => acc + val, 0) / arr.length);
+}
+
+function twoDecimals(num: number): number {
+    return Math.round(num * 100) / 100;
+}

@@ -10,9 +10,10 @@ import { routerReducer, provideRouterStore } from '@ngrx/router-store';
 import * as dashboardEffects from './store/effects';
 import { dashboardFeatureKey, dashboardReducer } from './store/reducers';
 import { provideHttpClient } from '@angular/common/http';
-import { ItemsTableComponent } from './pages/dashboard/components/items-table/items-table.component';
+import { ItemsOnSaleComponent } from './pages/dashboard/components/items-on-sale/items-on-sale.component';
+import { ItemInfoComponent } from './pages/dashboard/components/item-info/item-info.component';
 @NgModule({
-    declarations: [AppComponent, DashboardComponent, ItemsTableComponent],
+    declarations: [AppComponent, DashboardComponent, ItemsOnSaleComponent, ItemInfoComponent],
     imports: [BrowserModule, AppRoutingModule],
     providers: [
         provideHttpClient(),

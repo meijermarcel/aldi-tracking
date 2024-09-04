@@ -1,0 +1,23 @@
+<div class="sale-container">
+    <div class="sale-container-header">
+        <div>Items on sale</div>
+    </div>
+    <table>
+        <thead>
+            <th>Item</th>
+            <th>Cost</th>
+            <th>Avg Cost</th>
+            <th>Difference</th>
+        </thead>
+        <tbody>
+            @for (item of itemsForPage; track item.id) {
+            <tr>
+                <td><item-info [item]="item" /></td>
+                <td>{{ item.currentPrice | number : '1.2-2' }}</td>
+                <td>{{ item.averagePrice | number : '1.2-2' }}</td>
+                <td>{{ item.currentDiffFromAvgPrice | number : '1.2-2' }}</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>

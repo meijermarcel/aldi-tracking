@@ -1,0 +1,54 @@
+.sale-container {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+.sale-container-header {
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 1rem;
+}
+
+table {
+    --border-radius: var(--border-radius-standard);
+    border-spacing: 0;
+    border-collapse: unset;
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+
+    thead {
+        color: gray;
+        font-size: small;
+    }
+
+    th {
+        font-weight: 400;
+    }
+
+    th,
+    td {
+        padding: 0.5rem 1rem;
+    }
+
+    th {
+        border-top: 1px solid var(--border-color);
+        border-bottom: 1px solid var(--border-color);
+        background-color: #f8f8f8;
+    }
+
+    tr td {
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    tbody tr:hover {
+        background-color: var(--hover-row-color);
+        cursor: pointer;
+    }
+
+    tr:nth-child(even):not(:hover) {
+        background-color: #f6f6f6;
+    }
+}

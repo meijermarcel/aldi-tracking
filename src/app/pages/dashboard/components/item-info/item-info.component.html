@@ -1,0 +1,11 @@
+@if (item) {
+<div class="item-info-container">
+    <div class="item-info-img">
+        <img [src]="getImageLink(200)" />
+    </div>
+    <div class="item-info-overview">
+        <div class="item-info-description">{{ item.description }}</div>
+        <div class="item-info-amount">{{ item.amount }} {{ item.units }}</div>
+    </div>
+</div>
+}
