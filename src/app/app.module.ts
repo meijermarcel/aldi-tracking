@@ -12,9 +12,11 @@ import { dashboardFeatureKey, dashboardReducer } from './store/reducers';
 import { provideHttpClient } from '@angular/common/http';
 import { ItemsOnSaleComponent } from './pages/dashboard/components/items-on-sale/items-on-sale.component';
 import { ItemInfoComponent } from './pages/dashboard/components/item-info/item-info.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
+
 @NgModule({
     declarations: [AppComponent, DashboardComponent, ItemsOnSaleComponent, ItemInfoComponent],
-    imports: [BrowserModule, AppRoutingModule],
+    imports: [BrowserModule, AppRoutingModule, MatPaginatorModule],
     providers: [
         provideHttpClient(),
         provideStore({

@@ -1,10 +1,8 @@
 <div class="sale-container">
-    <div class="sale-container-header">
-        <div>Items on sale</div>
-    </div>
+    <div class="sale-container-header">Items on sale</div>
     <table>
         <thead>
-            <th>Item</th>
+            <th></th>
             <th>Cost</th>
             <th>Avg Cost</th>
             <th>Difference</th>
@@ -13,11 +11,17 @@
             @for (item of itemsForPage; track item.id) {
             <tr>
                 <td><item-info [item]="item" /></td>
-                <td>{{ item.currentPrice | number : '1.2-2' }}</td>
-                <td>{{ item.averagePrice | number : '1.2-2' }}</td>
+                <td>${{ item.currentPrice | number : '1.2-2' }}</td>
+                <td>${{ item.averagePrice | number : '1.2-2' }}</td>
                 <td>{{ item.currentDiffFromAvgPrice | number : '1.2-2' }}</td>
             </tr>
             }
         </tbody>
     </table>
+    <mat-paginator
+        [length]="itemsFiltered.length"
+        [pageSize]="pageSize"
+        (page)="handlePageEvent($event)"
+        hidePageSize="true"
+    ></mat-paginator>
 </div>
