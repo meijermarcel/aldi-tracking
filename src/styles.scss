@@ -2,28 +2,10 @@
 @import '@angular/material/prebuilt-themes/deeppurple-amber.css';
 
 :root {
-    --primary-color: #7b1417;
-    --primary-color-dim: #7b14172f;
-    --primary-color-light: #ae1c21;
-    --safepod-border-radius: 10px;
-    --success-color: green;
-    --danger-color: red;
-    --room-opened-color: orange;
-    --merge-source-color: orange;
-    --merge-destination-color: green;
     --shade-color: #f8f8f8;
     --border-color: #d0d7de;
-    --border-radius-standard: 7px;
-    --border-radius-curved: 15px;
     --hover-row-color: #e3f5ff;
-    --blue-highlight: rgb(0, 136, 255);
-    --blue-highlight-dim: rgba(0, 136, 255, 0.25);
-    --font-size-small: 12px;
-    --font-size-normal: 14px;
-    --font-size-large: 16px;
-    --information-color: orange;
-    --safepod-gray-accent: rgb(232, 232, 232);
-    --water-level-low: orange;
+    --blue-highlight-color: rgb(0, 145, 255);
 }
 
 body {

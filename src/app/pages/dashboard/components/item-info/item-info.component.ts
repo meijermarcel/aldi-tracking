@@ -15,6 +15,7 @@ export class ItemInfoComponent {
             return '';
         }
 
+        // replace {width} in imageLink to load image with indicated width
         return this.item.imageLink.replace('{width}', width.toString());
     }
 }

@@ -13,7 +13,6 @@ import { selectIsLoading, selectItems } from '../../store/reducers';
 })
 export class DashboardComponent {
     items$: Observable<Item[]> = new Observable<Item[]>();
-    isLoading$: Observable<boolean> = new Observable<boolean>();
     isLoading = false;
     isLoadingSubscription: Subscription;
     selectedItem: Item | null = null;
@@ -23,7 +22,6 @@ export class DashboardComponent {
     ngOnInit() {
         this.store.dispatch(loadItems());
         this.items$ = this.store.select(selectItems);
-        // this.isLoading$ = this.store.select(selectIsLoading);
         this.isLoadingSubscription = this.store.select(selectIsLoading).subscribe((data) => {
             this.isLoading = data;
             this.cd.markForCheck();

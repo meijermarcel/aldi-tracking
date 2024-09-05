@@ -21,10 +21,6 @@ export class ItemChartComponent {
     chartOptions: ChartConfiguration['options'] = {
         responsive: true,
         maintainAspectRatio: false,
-        // spanGaps: true,
-        // animation: {
-        //     duration: 0
-        // },
         hover: {
             mode: 'index',
             intersect: false
@@ -39,7 +35,7 @@ export class ItemChartComponent {
                 display: false
             },
             tooltip: {
-                mode: 'index', // change back to index to set tooltip to show all points at that time
+                mode: 'index',
                 intersect: false,
                 displayColors: false,
                 enabled: true
@@ -49,13 +45,7 @@ export class ItemChartComponent {
             x: {
                 display: false
             }
-            // y: {
-            //     beginAtZero: true
-            // }
         }
-        // interaction: {
-        //     mode: 'index'
-        // }
     };
 
     ngOnChanges() {
